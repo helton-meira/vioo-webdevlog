@@ -1,1 +1,36 @@
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 
+const postsDirectory = path.join(process.cwd(), 'content/updates');
+
+export type PostData = {
+  id: string;
+  date: string;
+  title: string;
+  tags: string[];
+  version?: string;
+  content: string;
+};
+
+export function getSortedPostsData() {
+  if (!fs.existsSync(postsDirectory)) {
+    return [];
+  }
+
+  const fileNames = fs.readdirSync(postsDirectory);
+  const allPostsData = fileNames.map((fileName) => {
+    const id = fileName.replace(/\.md$/, '');
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+
+    return {
+      id,
+      ...matterResult.data,
+      content: matterResult.content,
+    } as PostData;
+  });
+
+  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
+}
