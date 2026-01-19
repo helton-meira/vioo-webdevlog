@@ -1,9 +1,7 @@
-// Mude de @/lib/posts para:
 "use client";
 
 import { PostData } from "../lib/posts";
 import { useState } from "react";
-// Mantenha o resto...
 import { Terminal, Palette, BrainCircuit, Server, History, GitCommit } from "lucide-react";
 
 const tagColors: Record<string, string> = {
