@@ -1,32 +1,26 @@
-
-// components/UiComponents.tsx
 "use client";
 
 import { useTheme } from "next-themes";
 import { Moon, Sun, Mail, ArrowRight, Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-// --- TOGGLE TEMA ---
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // Evita erro de hidratação
-  useState(() => setMounted(true));
+  useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors text-slate-700 dark:text-slate-200"
-      aria-label="Alternar tema"
     >
       {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
     </button>
   );
 }
 
-// --- NEWSLETTER ---
 export function Newsletter() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
@@ -34,8 +28,6 @@ export function Newsletter() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    
-    // Simulação de envio (Aqui você conectaria com o Supabase depois)
     setTimeout(() => {
       setStatus("success");
       setEmail("");
