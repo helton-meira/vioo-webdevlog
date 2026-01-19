@@ -1,8 +1,6 @@
-// Substitua as linhas que tem @/ por estas:
 import { getSortedPostsData } from "../lib/posts";
 import Timeline from "../components/Timeline";
 import { ThemeToggle, Newsletter } from "../components/UiComponents";
-// Mantenha o resto do arquivo igual...
 import { Wallet } from "lucide-react";
 
 export default function Home() {
