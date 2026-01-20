@@ -36,7 +36,7 @@ export default function Home() {
             <Link href="#" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">
               Como Funciona
             </Link>
-            <Link href="#" className="text-sm font-medium text-slate-400 hover:text-white transition-colors flex items-center gap-1">
+            <Link href="/devlog" className="text-sm font-medium text-slate-400 hover:text-white transition-colors flex items-center gap-1">
               Dev Log
               <ExternalLink size={14} />
             </Link>
