@@ -249,8 +249,8 @@ export default function Home() {
             <div className="space-y-6">
               <h5 className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">Legal</h5>
               <ul className="space-y-4">
-                <li><Link className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Privacy Policy</Link></li>
-                <li><Link className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Terms of Service</Link></li>
+                <li><Link className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="/privacy">Privacy Policy</Link></li>
+                <li><Link className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="/terms">Terms of Service</Link></li>
                 <li><Link className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Cookie Policy</Link></li>
                 <li><Link className="text-sm text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#">Security Audit</Link></li>
               </ul>
